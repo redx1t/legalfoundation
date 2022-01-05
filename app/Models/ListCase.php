@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class ListCase extends Model
 {
@@ -18,7 +19,7 @@ class ListCase extends Model
      */
     public function client()
     {
-        return $this->hasOne(User::class);
+        return $this->hasOne(Client::class);
     }
 
     /**
@@ -30,4 +31,16 @@ class ListCase extends Model
     {
         return $this->hasOne(Lawyer::class);
     }
+
+    protected static function boot()
+{
+    parent::boot();
+
+    static::creating(function ($query) {
+        //this is for testing
+        $query->client_id = 1;
+
+        //$query->client_id = Auth::user()->client->id;
+    });
+}
 }

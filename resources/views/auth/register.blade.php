@@ -43,8 +43,7 @@
                             </div>
 
                             <div class="row mb-3">
-                                <label for="phone"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('E-Mail Address') }}</label>
+                                <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('Phone') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="phone" type="tel" class="form-control @error('phone') is-invalid @enderror"
