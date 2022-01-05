@@ -21,10 +21,11 @@ class CreateListCasesTable extends Migration
             $table->string('court')->nullable();
             $table->string('date')->nullable();
             $table->string('variation')->nullable();
-            $table->boolean('status')->default(0);
-            // 0 represents open
+            $table->boolean('status')->default(3);
+            // 0 represents open & verified
             // 1 represents closed
             // 2 represents stalled / abandoned
+            // 3 - unverified
             $table->text('judges')->nullable();
             $table->text('catchwords')->nullable();
             $table->text('headnotes')->nullable();
